@@ -1,9 +1,9 @@
 import requests
 from loguru import logger
 logger.add("infcontent.log",format = "{time} {level} {message}", level = "DEBUG")
-print("Здесь будут комманды")
-inmenu = input("Введите: ")
-if inmenu == "Инф":
+print("[1] Information \n [2] Back \n [3] Exit")
+inmenu = input("Enter command: ")
+if inmenu == "Information":
     req = input("Enter URL: ")
     res = requests.get(req, verify = True)
     print(res)
@@ -12,9 +12,9 @@ if inmenu == "Инф":
     logger.debug("2")
     print(res.headers)
     logger.debug("3")
-while inmenu == "Наз":
+while inmenu == "Back":
     inmenu1 = input("Введите: ")
-    if inmenu1 == "Инф":
+    if inmenu1 == "Information":
         req = input("Enter URL: ")
         res = requests.get(req)
         logger.debug("1")
@@ -23,5 +23,5 @@ while inmenu == "Наз":
         logger.debug("2")
         print(res.headers)
         logger.debug("3")
-    if inmenu1 == "Вых":
-        print("Вых")
+if inmenu == "Exit":
+        print("Exited")
