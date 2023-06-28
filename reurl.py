@@ -13,7 +13,7 @@ if inmenu == "Information":
     print(res.headers)
     logger.debug("3")
 while inmenu == "Back":
-    inmenu1 = input("Введите: ")
+    inmenu1 = input("Enter command: ")
     if inmenu1 == "Information":
         req = input("Enter URL: ")
         res = requests.get(req)
